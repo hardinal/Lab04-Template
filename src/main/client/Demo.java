@@ -1,5 +1,7 @@
 package client;
 
+import nature.Habitat;
+
 /**
  * Demo used to manually test the program.
  * 
@@ -15,6 +17,10 @@ public class Demo
      */
     public static void main(String[] args)
     {
-        
+        Habitat boogieBarn = new Habitat("BoogieBarn", 0, 0);
+
+        for (int i = 0; i <  )
+
+
     }
 }

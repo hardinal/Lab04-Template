@@ -7,10 +7,11 @@ public class Habitat
     private String name;
     private double latitude;
     private double longitude;
-    private ArrayList<Animal> Animal;
+    private ArrayList<Animal> animals;
 
     public Habitat(String name, double lat, double lon)
     {
+        this.animals = new ArrayList<Animal>();
         this.name = name;
         this.latitude = lat;
         this.longitude = lon;
@@ -49,16 +50,34 @@ public class Habitat
 
     public int getNumOfAnimals()
     {
-        return Animal.size();
+        return animals.size();
     }
 
-    public void addAnimals(Animal animal)
+    public void addAnimal(Animal animal)
     {
-
+        animals.add(animal);
     }
 
     public void testAnimals()
     {
+        System.out.println(this.name + "\n");
+        System.out.println(this.latitude+ "\n");
+        System.out.println(this.longitude+ "\n");
+        System.out.println(this.getNumOfAnimals()+ "\n");
 
+        for (Animal animal : animals)
+        {
+            animal.sleep();
+            animal.makeNoise();
+            animal.eat();
+            animal.roam();
+
+            if (animal instanceof Pet)
+            {
+                Pet pet = (Pet) animal;
+                pet.play();
+                pet.beFriendly();
+            }
+        }
     }
 }
